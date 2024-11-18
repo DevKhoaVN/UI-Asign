@@ -1,0 +1,499 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  background-color: var(--color-background);
+  color: var(--color-secondary);
+  height: 10000px;
+}
+
+/* ===================================common=================================== */
+
+:root {
+  --color-primary: #b00000;
+  --color-secondary: #333;
+  --color-background: #f9f9f9;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  font-family: Poppins;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+}
+.header__container {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+/* ===================================header top=================================== */
+
+.header-top {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  margin-top: 1.5rem;
+}
+
+.header__logo {
+  display: flex;
+}
+
+.header__logo img {
+  height: 4rem;
+  width: auto;
+}
+
+.header__nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.header__nav ul li a {
+  color: var(--color-secondary);
+  font-weight: 500;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+  padding: 1rem 2rem;
+}
+
+.header__nav ul li a:hover {
+  color: var(--color-primary);
+}
+
+.header__acc {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.header__acc .account::after {
+  position: absolute;
+  content: ""; /* Tạo nội dung rỗng */
+  display: inline-block;
+  width: 1px; /* Độ dày thanh ngang */
+  height: 19px; /* Chiều cao thanh ngang */
+  background: #dad8d8; /* Màu thanh ngang */
+  margin: 0 5px; /* Khoảng cách giữa "Account" và số điện thoại */
+}
+
+.header__acc .contact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.header__services {
+  margin: auto 0;
+  display: inline-block;
+  margin-left: 30px;
+}
+.contact i {
+  color: var(--color-primary);
+}
+.fa-phone {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .header-top {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .header__nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .header__acc {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .header__logo a {
+    margin-right: 0;
+  }
+
+  /* Adjusting logo and navigation for smaller screens */
+  .header__logo img {
+    height: 3rem;
+  }
+
+  .header__nav ul li a {
+    padding: 0.8rem;
+    font-size: 1.3rem;
+  }
+
+  /* Account and contact info adjusted for mobile */
+  .header__acc .contact {
+    margin-top: 1rem;
+  }
+}
+
+/* ======================= */
+
+.header__options ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+.header__options {
+  margin-bottom: 30px;
+}
+
+.header__bottom .heading {
+  width: 608px;
+  color: var(--Text-Title, #2e2e2e);
+  font-family: Poppins;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 77.5px;
+}
+
+.header__bottom .desc {
+  width: 448px;
+  color: var(--Text-Body, #808080);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.8px;
+  margin-bottom: 34px;
+}
+
+.action {
+  margin-top: 60px;
+  width: 344px;
+  display: flex;
+  justify-content: space-between;
+}
+.action .btn-create {
+  color: #ffff;
+  border: none;
+  display: flex;
+  width: 160px;
+  padding: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: #b00000;
+  box-shadow: 0px 0px 64px 0px rgba(176, 0, 0, 0.3);
+}
+
+.action .btn-choose {
+  border: none;
+  display: flex;
+  width: 160px;
+  padding: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--Base-Black, #000);
+}
+
+.header__bottom {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.header__bottom--left {
+  margin-left: 60px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.header__bottom--right {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .header__bottom .heading {
+    font-size: 3.2rem;
+    width: 100%;
+  }
+
+  .header__bottom .desc {
+    font-size: 1.4rem;
+    width: 100%;
+  }
+
+  .action {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header__bottom--right img {
+    width: 80%;
+    height: auto;
+  }
+}
+
+.header__options::after {
+  content: "";
+  width: 213px;
+  height: 1px;
+  background: #e5e5e5;
+  display: inline-block;
+  margin-top: -50px;
+}
+
+.header__options li {
+  color: rgba(214, 212, 212, 0.88);
+  font-family: Poppins;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  position: relative;
+  padding-bottom: 10px; /* Khoảng cách dưới cho thanh dưới */
+}
+
+.header__options li::after {
+  content: "";
+  display: inline-block;
+  width: 0; /* Không có thanh dưới ban đầu */
+  height: 3px; /* Độ cao của thanh dưới */
+  background: var(--color-primary);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease; /* Hiệu ứng chuyển động cho thanh dưới */
+}
+
+.header__options li:hover {
+  color: #b00000; /* Màu chữ khi hover */
+}
+
+.header__options li:hover::after {
+  width: 100%; /* Thanh dưới mở rộng khi hover */
+}
+
+.retangle1 {
+  position: absolute;
+  left: 90px;
+}
+
+.retangle2 {
+  position: absolute;
+  top: 60px;
+  right: 100px;
+}
+
+.retangle3 {
+  position: absolute;
+  bottom: 40px;
+  right: 90px;
+}
+
+/* ==============================================whyus=========== */
+.whyus__top {
+  display: flex;
+  margin-top: 104px;
+  justify-content: flex-start;
+  margin-left: 60px;
+}
+
+.whyus__top .heading {
+  width: 594px;
+  color: var(--Text-Gray-900, #18191f);
+  font-feature-settings: "salt" on, "liga" off;
+
+  /* Heading / H2 */
+  font-family: Inter;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 64px; /* 133.333% */
+}
+
+.whyus__top .desc {
+  width: 573px;
+  color: var(--Text-Gray-900, #18191f);
+  font-feature-settings: "salt" on, "liga" off;
+
+  /* Lead / Lead 1 */
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 177.778% */
+}
+.whyus__partner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px;
+  margin-left: 150px;
+
+  /* Căn giữa logo */
+  justify-items: center;
+  align-items: center;
+}
+
+.whyus__bottom .list__items {
+  width: 1440px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.whyus__bottom .list__items div {
+  width: 280px; /* Đảm bảo kích thước nhất quán giữa các mục */
+  display: flex;
+  flex-direction: column; /* Căn các thành phần theo chiều dọc */
+  align-items: center; /* Căn giữa theo chiều ngang */
+  text-align: center; /* Căn chữ ở giữa */
+  padding: 10px; /* Thêm khoảng cách trong mục */
+  box-sizing: border-box; /* Bao gồm padding vào kích thước */
+}
+
+.whyus__bottom .list__items img {
+  width: 80px; /* Kích thước cố định của ảnh */
+  height: auto; /* Giữ tỷ lệ ảnh */
+  margin-bottom: 15px; /* Khoảng cách dưới ảnh */
+}
+
+.whyus__bottom .list__items .heading {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 10px 0 6px;
+}
+.whyus__bottom .list__items .desc {
+  width: 252px;
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+/* ==== */
+@media (max-width: 768px) {
+  .whyus__bottom .list__items {
+    flex-direction: column; /* Chuyển từ hàng sang cột */
+    gap: 30px; /* Tăng khoảng cách giữa các mục */
+  }
+
+  .whyus__bottom .list__items div {
+    width: 100%; /* Đảm bảo mục chiếm đầy đủ chiều rộng */
+  }
+}
+/* =================pricing */
+
+.pricing__top {
+  width: 856px;
+  height: 411px;
+  margin: 133px auto 0;
+}
+.pricing__top .heading {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 60px; /* 120% */
+  margin-bottom: 38px;
+}
+
+.pricing__top .desc {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px; /* 100% */
+}
+
+.pricing__top .choose {
+  display: flex;
+  margin: 30px auto;
+  justify-content: center;
+  align-items: center;
+}
+.pricing__top .btn__choose {
+  width: 93px;
+  height: 50px;
+  border-radius: 73px; /* Bo tròn nút */
+  background: var(--color-primary); /* Màu nền nút */
+  display: flex; /* Sử dụng Flexbox để căn chỉnh */
+  margin-left: 30px;
+  position: relative;
+  border: none; /* Loại bỏ viền mặc định của nút */
+  cursor: pointer; /* Thêm hiệu ứng con trỏ */
+}
+
+.pricing__top .btn__choose .circle {
+  width: 30px;
+  height: 30px;
+  top: 20px;
+  background-color: #ffff; /* Màu chấm tròn */
+  border-radius: 50%; /* Biến hình vuông thành hình tròn */
+  position: absolute;
+}
+.pricing__top .choose div {
+  width: 120x;
+  padding: 5px;
+
+  border-radius: 8px;
+  background: #ffe87a;
+  margin-top: -10px;
+}
+
+.pricing__top .year {
+  margin: 0 16px;
+}
+
+.pricing__top .rank {
+  display: flex;
+  justify-content: space-around;
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px; /* 133.333% */
+}
